@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+        <!-- Step 1: Date Selection -->
+        <div class="step" id="step1">
+            <h2>Select Appointment Date</h2>
+             <input type="date" id="dateSelect" min="" pattern="\d{2}.\d{2}.\d{4}" onchange="checkWeekend(this)">
+            <p class="error-message" id="weekendError" style="display: none; color: red;">
+                We do not offer services on Sundays. Please select another day.
+            </p>
+            <div class="button-group">
+                <button onclick="nextStep(1)">Continue</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Time Selection -->
+        <div class="step" id="step2" style="display: none;">
+            <h2>Select Appointment Time</h2>
+            <div class="time-slots" id="timeSlots">
+                <!-- Time slots will be populated with PHP -->
+            </div>
+            <div class="button-group">
+                <button onclick="prevStep(2)">Back</button>
+                <button onclick="nextStep(2)">Continue</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Personal Information -->
+        <div class="step" id="step3" style="display: none;">
+            <h2>Personal Information</h2>
+            <form id="appointmentForm">
+                <div class="form-inputs">
+                    <input type="text" id="name" placeholder="Name Surname" required>
+                    <input type="tel" id="phone" placeholder="Phone" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="button-group">
+                    <button type="button" onclick="prevStep(3)">Back</button>
+                    <button type="submit">Make Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

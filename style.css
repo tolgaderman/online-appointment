@@ -1,0 +1,331 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0F1B2D;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo-container {
+    text-align: center;
+    margin: 20px auto 40px;
+    width: 150px;
+    height: 150px;
+    border-radius: 80%;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+}
+
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.step {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.step h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+}
+
+.step > * {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Custom style for button group */
+.step > .button-group {
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 10px;
+}
+
+.step input[type="date"] {
+    position: relative;
+    padding: 15px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Custom style for date picker on mobile devices */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: #333;
+}
+
+
+input[type="date"]:empty:before {
+    content: attr(placeholder);
+    color: #999;
+}
+
+input, button {
+    max-width: 400px;
+    padding: 15px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+.time-slot {
+    padding: 10px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.time-slot.selected {
+    background: #007bff;
+    color: white;
+}
+
+.time-slot.booked {
+    background: #f8f9fa;
+    color: #ccc;
+    text-decoration: line-through;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.time-slot.booked:hover {
+    background: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.appointment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+    max-width: 180px;
+    margin: 0;
+}
+
+#appointmentForm {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-inputs input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-inputs input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px auto;
+        padding: 15px;
+        width: 95%;
+    }
+    
+    .logo-container {
+        width: 120px;
+        height: 120px;
+        margin: 10px auto 30px;
+    }
+    
+    .step {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .step h2 {
+        font-size: 20px;
+    }
+    
+    input, button {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .form-inputs input {
+        padding: 12px;
+    }
+} 
+
+.confirmation {
+    text-align: center;
+}
+
+.confirmation h2 {
+    font-size: 28px;
+    color: #28a745;
+    margin-bottom: 30px;
+}
+
+.confirmation-details {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: 500;
+    color: #666;
+}
+
+.value {
+    font-weight: bold;
+    color: #333;
+}
+
+.confirmation-message {
+    font-size: 16px;
+    color: #666;
+    margin: 25px 0;
+}
+
+.back-button {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.redirect-message {
+    color: #666;
+    font-size: 14px;
+    margin-top: 15px;
+    font-style: italic;
+    text-align: center;
+} 
